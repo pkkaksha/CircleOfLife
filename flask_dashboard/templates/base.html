@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+  {% block head %}
+    <title>Weather Data | {% block title %}{% endblock %}</title>   
+    {% endblock %}
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='animate.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+  <!-- Custom styling plus plugins -->
+  <link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet">
+  <!-- <script src="{{ url_for('static', filename='jquery.min.js') }}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>Weather Data Analysis</span></a>
+          </div>
+          <div class="clearfix"></div>
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a><i class='fa fa-fire'></i> General Information <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><a href="\">Attribute wise records</a>
+                    </li>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+           
+
+          </div>
+          <!-- /sidebar menu -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+
+        <div class="nav_menu">
+          <nav class="" role="navigation">
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+          </nav>              
+        </div>
+      </div>
+              
+
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">{% block content %}{% endblock %}</div>
+        <!-- footer content -->
+
+      </div>
+      <!-- /page content -->
+    </div>
+
+  </div>
+
+  <div id="custom_notifications" class="custom-notifications dsp_none">
+    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+    </ul>
+    <div class="clearfix"></div>
+    <div id="notif-group" class="tabbed_notifications"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='raphael-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='morris.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+  <!-- bootstrap progress js -->
+  <script src="{{ url_for('static', filename='bootstrap-progressbar.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='jquery.nicescroll.min.js') }}"></script>
+  <!-- icheck -->
+  <script src="{{ url_for('static', filename='icheck.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='custom.js') }}"></script>
+  <!-- pace -->
+  <script src="{{ url_for('static', filename='pace.min.js') }}"></script>
+    
+</body>
+
+</html>

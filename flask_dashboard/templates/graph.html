@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %}
+Graph
+{% endblock %}
+{% block content %}
+<div id="cloudContainer" class="col-md-6 col-sm-6 col-xs-12" style="width: 800px; height: 400px; margin: 0 auto"></div>
+<div id="visibilityContainer" class="col-md-6 col-sm-6 col-xs-12" style="width: 800px; height: 400px; margin: 0 auto"></div>
+<div id="pressureContainer" class="col-md-6 col-sm-6 col-xs-12" style="width: 800px; height: 400px; margin: 0 auto"></div>
+<div id="tempContainer" class="col-md-6 col-sm-6 col-xs-12" style="width: 800px; height: 400px; margin: 0 auto"></div>
+<div id="humidityContainer" class="col-md-6 col-sm-6 col-xs-12" style="width: 800px; height: 400px; margin: 0 auto"></div>
+<div id="windSpeedContainer" class="col-md-6 col-sm-6 col-xs-12" style="width: 800px; height: 400px; margin: 0 auto"></div>
+
+<div id="maxTempContainer" class="col-md-6 col-sm-6 col-xs-12" style="width: 800px; height: 400px; margin: 0 auto"></div>
+
+<script language="JavaScript">
+$(document).ready(function() {
+
+    var chart = new Highcharts.Chart({
+        title : {
+            text: '{{name}}'   
+        },
+        chart: {
+            renderTo: 'cloudContainer',
+            zoomType: 'xy',
+            type: 'column'
+        },
+        xAxis: {
+            categories: {{ cities|safe }},
+            title: {
+                text: 'Cities'
+            }
+        },
+        yAxis : {
+            title: {
+                text: 'Percentage (%)'
+            }          
+        },
+        series: [{ name: ['Cloud'], color: 'red',  data: {{ clouds|safe}}}]
+    
+    }); 
+    var chart2 = new Highcharts.Chart({
+        title : {
+            text: ''  
+        },
+        chart: {
+            renderTo: 'visibilityContainer',
+            zoomType: 'xy',
+            type: 'bar'
+        },
+        xAxis: {
+            categories: {{ cities|safe }},
+            title: {
+                text: 'Cities'
+            }
+        },
+        yAxis : {
+            title: {
+                text: 'Count'
+            }          
+        },
+        series: [{ name: ['Visibility'], color: 'green', data: {{ visibility|safe}}}]
+    
+    }); 
+    var chart3 = new Highcharts.Chart({
+        title : {
+            text: ''  
+        },
+        chart: {
+            renderTo: 'pressureContainer',
+            zoomType: 'xy'
+        },
+        xAxis: {
+            categories: {{ cities|safe }},
+            title: {
+                text: 'Cities'
+            }
+        },
+        yAxis : {
+            title: {
+                text: 'Count'
+            }          
+        },
+        series: [{ name: ['Pressure'], color: 'magenta', data: {{ pressure|safe}}}]
+    
+    }); 
+
+     var chart4 = new Highcharts.Chart({
+        title : {
+            text: ''  
+        },
+        chart: {
+            renderTo: 'tempContainer',
+            zoomType: 'xy',
+            type: 'bar'
+        },
+        xAxis: {
+            categories: {{ cities|safe }},
+            title: {
+                text: 'Cities'
+            }
+        },
+        yAxis : {
+            title: {
+                text: 'Count'
+            }          
+        },
+        series: [{ name: ['temp'], data: {{ temp|safe}}}]
+    
+    }); 
+      var chart5 = new Highcharts.Chart({
+        title : {
+            text: ''  
+        },
+        chart: {
+            renderTo: 'humidityContainer',
+            zoomType: 'xy',
+            type: 'column'
+        },
+        xAxis: {
+            categories: {{ cities|safe }},
+            title: {
+                text: 'Cities'
+            }
+        },
+        yAxis : {
+            title: {
+                text: 'Count'
+            }          
+        },
+        series: [{ name: ['Humidity'], color: 'cyan', data: {{ humidity|safe}}}]
+    
+    }); 
+       var chart3 = new Highcharts.Chart({
+        title : {
+            text: ''  
+        },
+        chart: {
+            renderTo: 'windSpeedContainer',
+            zoomType: 'xy',
+            type: 'column'
+        },
+        xAxis: {
+            categories: {{ cities|safe }},
+            title: {
+                text: 'Cities'
+            }
+        },
+        yAxis : {
+            title: {
+                text: 'Count'
+            }          
+        },
+        series: [{ name: ['Wind Speed'], color:'black', data: {{ wind_speed|safe}}}]
+    
+    }); 
+    var chart3 = new Highcharts.Chart({
+        title : {
+            text: ''  
+        },
+        chart: {
+            renderTo: 'maxTempContainer',
+            zoomType: 'xy',
+            type: 'bar'
+        },
+        xAxis: {
+            categories: {{ cities|safe }},
+            title: {
+                text: 'Cities'
+            }
+        },
+        yAxis : {
+            title: {
+                text: 'Count'
+            }          
+        },
+        series: [{ name: ['Max Temperature'], color:'#FFC0CB', data: {{ max_temp_list|safe}}}]
+    
+    }); 
+
+});
+</script>
+
+{% endblock %}

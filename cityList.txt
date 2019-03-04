@@ -1,0 +1,10 @@
+Mumbai,in
+Delhi,in
+Washington,us
+London,gb
+Paris,fr
+Milano,it
+Tokyo,jp
+Kathmandu,np
+Sydney,au
+Moscow,ru
