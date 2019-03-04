@@ -14,8 +14,11 @@
 
 (4) The dashboard is build with Flask Web Framework. 
 > Usage
+
 > cd flask_dashboard
+
 > pip install -r requirements.txt
+
 > python app.py
 
 The flask server wis hosted at http://0.0.0.0:5000/
