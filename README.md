@@ -2,6 +2,7 @@
 #### Usage
 
 (1) Extracting data from the Weather API and store to MongoDB
+
 (2) The entire query list is stored in cityList.txt file
 
 > Usage
