@@ -9,7 +9,7 @@
 python dataExtractor.py ./data
 
 (3) dataExtractor is running in cronjob as (after every 2 hours)
-> 0 */2 * * * /usr/bin/python2 <absolute-link-to-data-extractor-file> <absolute-link-to-data-dir>
+> 0 */2 * * * /usr/bin/python2 absolute-link-to-data-extractor-file absolute-link-to-data-dir
 
 (4) The dashboard is build with Flask Web Framework. 
 > Usage
