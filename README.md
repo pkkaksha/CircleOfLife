@@ -7,7 +7,7 @@
 
 > Usage
 
-> python dataExtractor.py ./data
+> python2 dataExtractor.py ./data
 
 (3) dataExtractor is running in cronjob as (after every 2 hours)
 > 0 */2 * * * /usr/bin/python2 (absolute-link-to-data-extractor-file) (absolute-link-to-data-dir)
@@ -19,7 +19,7 @@
 
 > pip install -r requirements.txt
 
-> python app.py
+> python2 app.py
 
 The flask server wis hosted at http://0.0.0.0:5000/
 
