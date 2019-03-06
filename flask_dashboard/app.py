@@ -3,6 +3,7 @@ from flask import request, render_template
 from pymongo import MongoClient
 import datetime
 import json
+import pymongo
 
 # Initialize the pymongo (Setting up the local database)
 client = MongoClient()
@@ -18,7 +19,7 @@ def analysis():
 
 
 	# Sort the data according to endTime key
-	latest_record = collection_data.find().sort([("endTime", 1)]).limit(1)[0]
+	latest_record = collection_data.find().sort([("endtime", pymongo.DESCENDING)]).limit(1)[0]
 	
 	cities = latest_record['data'].keys()
 	cities = [str(x) for x in cities]
